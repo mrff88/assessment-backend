@@ -6,7 +6,8 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "lint": "eslint -c .eslintrc.json --ext .js,.jsx ."
+    "lint": "eslint -c .eslintrc.json --ext .js,.jsx .",
+    "start": "nodemon server.js"
   },
   "repository": {
     "type": "git",
@@ -18,5 +19,8 @@
   "bugs": {
     "url": "https://github.com/mrff88/assessment-backend/issues"
   },
-  "homepage": "https://github.com/mrff88/assessment-backend#readme"
+  "homepage": "https://github.com/mrff88/assessment-backend#readme",
+  "devDependencies": {
+    "nodemon": "^2.0.15"
+  }
 }
