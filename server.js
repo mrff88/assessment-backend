@@ -1,3 +1,5 @@
+import express from 'express';
+import mongoose from 'mongoose';
 import dotenv from 'dotenv';
 import { fileURLToPath } from 'url';
 import path from 'path';
@@ -11,10 +13,21 @@ dotenv.config({
 });
 
 /**
+ * Mongoose
+ */
+
+// Connect to db
+const dbConnection = process.env.DB_STRING_CONNECTION;
+await mongoose.connect(dbConnection);
+
+// Listen to connection errors
+mongoose.connection.on('error', function (e) {
+  console.error('ERROR: ', e);
+});
+
+/**
  * Express
  */
-import express from 'express';
-
 const app = express();
 
 // Port env conf
