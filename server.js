@@ -10,4 +10,17 @@ dotenv.config({
   path: path.resolve(__dirname, `${process.env.NODE_ENV}.env`),
 });
 
-console.log('hello world');
+/**
+ * Express
+ */
+import express from 'express';
+
+const app = express();
+
+// Port env conf
+const PORT = process.env.PORT;
+
+// launch server
+app.listen(PORT, () => {
+  console.log('- Initialized server -');
+});
