@@ -5,9 +5,9 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
     "lint": "eslint -c .eslintrc.json --ext .js,.jsx .",
-    "start": "nodemon server.js"
+    "test": "set NODE_ENV=test&& nodemon server.js",
+    "start": "set NODE_ENV=dev&& nodemon server.js"
   },
   "repository": {
     "type": "git",
@@ -22,5 +22,8 @@
   "homepage": "https://github.com/mrff88/assessment-backend#readme",
   "devDependencies": {
     "nodemon": "^2.0.15"
+  },
+  "dependencies": {
+    "dotenv": "^16.0.0"
   }
 }
