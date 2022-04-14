@@ -3,6 +3,7 @@ import mongoose from 'mongoose';
 import dotenv from 'dotenv';
 import { fileURLToPath } from 'url';
 import path from 'path';
+import { userRouter, authRouter } from './api/routes/index.js';
 
 // config dotenv environments
 const __filename = fileURLToPath(import.meta.url);
@@ -29,6 +30,13 @@ mongoose.connection.on('error', function (e) {
  * Express
  */
 const app = express();
+
+// Middlewares
+app.use(express.json());
+
+// routes
+app.use('/api', userRouter);
+app.use('/auth', authRouter);
 
 // Port env conf
 const PORT = process.env.PORT;
