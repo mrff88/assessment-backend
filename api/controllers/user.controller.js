@@ -1,4 +1,5 @@
 import { User } from '../models/index.js';
+import errorMessageHandler from '../utils/errorMessageHandler.js';
 
 // create user
 export const createUser = async (req, res) => {
@@ -8,12 +9,9 @@ export const createUser = async (req, res) => {
     const newUser = await User.create({ email, password });
     res.status(201).json(newUser);
   } catch (error) {
-    const errors = {};
+    const errors = errorMessageHandler(error);
 
-    if (error.message.includes('user validation failed')) {
-      Object.values(error.errors).forEach(({ properties }) => {
-        errors[properties.path] = properties.message;
-      });
+    if (errors) {
       return res.status(400).json({ errors });
     }
 
