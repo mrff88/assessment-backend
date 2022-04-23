@@ -5,7 +5,10 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "lint": "eslint -c .eslintrc.json --ext .js,.jsx .",
+    "test": "set NODE_ENV=test&& nodemon server.js",
+    "test:watch": "jest --watch",
+    "start": "set NODE_ENV=dev&& nodemon server.js"
   },
   "repository": {
     "type": "git",
@@ -17,5 +20,18 @@
   "bugs": {
     "url": "https://github.com/mrff88/assessment-backend/issues"
   },
-  "homepage": "https://github.com/mrff88/assessment-backend#readme"
+  "homepage": "https://github.com/mrff88/assessment-backend#readme",
+  "devDependencies": {
+    "@babel/plugin-transform-modules-commonjs": "^7.17.9",
+    "axios": "^0.26.1",
+    "jest": "^27.5.1",
+    "nodemon": "^2.0.15"
+  },
+  "dependencies": {
+    "dotenv": "^16.0.0",
+    "express": "^4.17.3",
+    "jsonwebtoken": "^8.5.1",
+    "mongoose": "^6.2.11",
+    "validator": "^13.7.0"
+  }
 }
