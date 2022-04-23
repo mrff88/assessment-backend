@@ -7,6 +7,7 @@
   "scripts": {
     "lint": "eslint -c .eslintrc.json --ext .js,.jsx .",
     "test": "set NODE_ENV=test&& nodemon server.js",
+    "test:watch": "jest --watch",
     "start": "set NODE_ENV=dev&& nodemon server.js"
   },
   "repository": {
@@ -21,6 +22,9 @@
   },
   "homepage": "https://github.com/mrff88/assessment-backend#readme",
   "devDependencies": {
+    "@babel/plugin-transform-modules-commonjs": "^7.17.9",
+    "axios": "^0.26.1",
+    "jest": "^27.5.1",
     "nodemon": "^2.0.15"
   },
   "dependencies": {
