@@ -1,0 +1,680 @@
+{
+	"info": {
+		"_postman_id": "98f8ba43-276c-4ed3-8455-1cc2f6d47145",
+		"name": "backend-assessment",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Authentication user",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"email\": \"mrff88@gmail.com\",\r\n    \"password\": \"Melanthios1088@\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:5000/auth/local/login",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"auth",
+						"local",
+						"login"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Authentication user status 200",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\": \"mrff88@gmail.com\",\r\n    \"password\": \"Melanthios1088@\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:5000/auth/local/login",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"auth",
+								"local",
+								"login"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "153"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"99-yvj7aBZTgDpF6seyq3eQKrNX/B8\""
+						},
+						{
+							"key": "Date",
+							"value": "Fri, 22 Apr 2022 15:45:44 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"token\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6Im1yZmY4OEBnbWFpbC5jb20iLCJpYXQiOjE2NTA2NDIzNDR9.OEpIrY_RfkWpS_s_0dG_yWGuoxXi_EpDW9kALSGvEXo\"\n}"
+				}
+			]
+		},
+		{
+			"name": "Create user",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"email\": \"mrff88@gmail.com\",\r\n    \"password\": \"Melanthios1088@\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:5000/api/users/create",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"api",
+						"users",
+						"create"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Create user status 201",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\": \"mrff88@gmail.com\",\r\n    \"password\": \"Melanthios1088@\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:5000/api/users/create",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"users",
+								"create"
+							]
+						}
+					},
+					"status": "Created",
+					"code": 201,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "98"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"62-gPW/UgT2GV2k8yq2OL8qu4rxqQo\""
+						},
+						{
+							"key": "Date",
+							"value": "Fri, 22 Apr 2022 15:09:53 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"email\": \"mrff88@gmail.com\",\n    \"password\": \"Melanthios1088@\",\n    \"_id\": \"6262c540349ccd8abca382e6\",\n    \"__v\": 0\n}"
+				}
+			]
+		},
+		{
+			"name": "Create Fav List",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6Im1yZmY4OEBnbWFpbC5jb20iLCJpYXQiOjE2NTA2NDIzNDR9.OEpIrY_RfkWpS_s_0dG_yWGuoxXi_EpDW9kALSGvEXo",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\": \"Songs\",\r\n    \"ownerID\": \"62632d1d46a06f2da9bd83db\",\r\n    \"favs\": [\r\n        {\r\n            \"title\": \"We'll Meet Again\",\r\n            \"description\": \"Awesome Johnny Cash song\",\r\n            \"link\": \"https://www.youtube.com/watch?v=O7QhMZfgHwc&list=PLAxGilmEC8ldF-J5Eh3I4mMd1ZsiBjH9-\"\r\n        },\r\n        {\r\n            \"title\": \"Vida la vida\",\r\n            \"description\": \"My favorite Coldplay song\",\r\n            \"link\": \"https://www.youtube.com/watch?v=dvgZkm1xWPE&list=PLAxGilmEC8ldF-J5Eh3I4mMd1ZsiBjH9-\"\r\n        }\r\n    ]\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:5000/api/favs",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"api",
+						"favs"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Create Fav List status 201",
+					"originalRequest": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6Im1yZmY4OEBnbWFpbC5jb20iLCJpYXQiOjE2NTA1ODM5OTZ9.OQqB4AD2R_0mnNEAL3WpPMAoem1tgzI2agBRFK6Q_dQ",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"Movies\",\r\n    \"ownerID\": \"6262c540349ccd8abca382e6\",\r\n    \"favs\": [\r\n        {\r\n            \"title\": \"Independence day\",\r\n            \"description\": \"best sci-fy movie from the 90's\",\r\n            \"link\": \"https://www.imdb.com/title/tt0116629/?ref_=nv_sr_srsg_0\"\r\n        },\r\n        {\r\n            \"title\": \"Inception\",\r\n            \"description\": \"My favorite Leonardo Di Caprio movie\",\r\n            \"link\": \"https://www.imdb.com/title/tt1375666/?ref_=nv_sr_srsg_0\"\r\n        }\r\n    ]\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:5000/api/favs",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"favs"
+							]
+						}
+					},
+					"status": "Created",
+					"code": 201,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "386"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"182-IfkXXd+/s+/4A7f7CivW3V+2DKE\""
+						},
+						{
+							"key": "Date",
+							"value": "Fri, 22 Apr 2022 15:39:18 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"name\": \"Movies\",\n    \"ownerID\": \"6262c540349ccd8abca382e6\",\n    \"favs\": [\n        {\n            \"title\": \"Independence day\",\n            \"description\": \"best sci-fy movie from the 90's\",\n            \"link\": \"https://www.imdb.com/title/tt0116629/?ref_=nv_sr_srsg_0\"\n        },\n        {\n            \"title\": \"Inception\",\n            \"description\": \"My favorite Leonardo Di Caprio movie\",\n            \"link\": \"https://www.imdb.com/title/tt1375666/?ref_=nv_sr_srsg_0\"\n        }\n    ],\n    \"_id\": \"6262cc26349ccd8abca382ea\",\n    \"__v\": 0\n}"
+				}
+			]
+		},
+		{
+			"name": "Get user's fav lists",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6Im1yZmY4OEBnbWFpbC5jb20iLCJpYXQiOjE2NTA2NDIzNDR9.OEpIrY_RfkWpS_s_0dG_yWGuoxXi_EpDW9kALSGvEXo",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:5000/api/favs/users/62632d1d46a06f2da9bd83db",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"api",
+						"favs",
+						"users",
+						"62632d1d46a06f2da9bd83db"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Get user's fav lists status 200",
+					"originalRequest": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6Im1yZmY4OEBnbWFpbC5jb20iLCJpYXQiOjE2NTA2NDIzNDR9.OEpIrY_RfkWpS_s_0dG_yWGuoxXi_EpDW9kALSGvEXo",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:5000/api/favs/users/6262c540349ccd8abca382e6",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"favs",
+								"users",
+								"6262c540349ccd8abca382e6"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "815"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"32f-1G1GR6JK6pAmS4ffOR92f1EGjZE\""
+						},
+						{
+							"key": "Date",
+							"value": "Fri, 22 Apr 2022 15:52:58 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "[\n    {\n        \"_id\": \"6262cc26349ccd8abca382ea\",\n        \"name\": \"Movies\",\n        \"ownerID\": \"6262c540349ccd8abca382e6\",\n        \"favs\": [\n            {\n                \"title\": \"Independence day\",\n                \"description\": \"best sci-fy movie from the 90's\",\n                \"link\": \"https://www.imdb.com/title/tt0116629/?ref_=nv_sr_srsg_0\"\n            },\n            {\n                \"title\": \"Inception\",\n                \"description\": \"My favorite Leonardo Di Caprio movie\",\n                \"link\": \"https://www.imdb.com/title/tt1375666/?ref_=nv_sr_srsg_0\"\n            }\n        ],\n        \"__v\": 0\n    },\n    {\n        \"_id\": \"6262cd04349ccd8abca382ed\",\n        \"name\": \"Songs\",\n        \"ownerID\": \"6262c540349ccd8abca382e6\",\n        \"favs\": [\n            {\n                \"title\": \"We'll Meet Again\",\n                \"description\": \"Awesome Johnny Cash song\",\n                \"link\": \"https://www.youtube.com/watch?v=O7QhMZfgHwc&list=PLAxGilmEC8ldF-J5Eh3I4mMd1ZsiBjH9-\"\n            },\n            {\n                \"title\": \"Vida la vida\",\n                \"description\": \"My favorite Coldplay song\",\n                \"link\": \"https://www.youtube.com/watch?v=dvgZkm1xWPE&list=PLAxGilmEC8ldF-J5Eh3I4mMd1ZsiBjH9-\"\n            }\n        ],\n        \"__v\": 0\n    }\n]"
+				}
+			]
+		},
+		{
+			"name": "Get a fav list",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6Im1yZmY4OEBnbWFpbC5jb20iLCJpYXQiOjE2NTA2NDIzNDR9.OEpIrY_RfkWpS_s_0dG_yWGuoxXi_EpDW9kALSGvEXo",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:5000/api/favs/62632d4e46a06f2da9bd83de",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"api",
+						"favs",
+						"62632d4e46a06f2da9bd83de"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Get a fav list status 200",
+					"originalRequest": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6Im1yZmY4OEBnbWFpbC5jb20iLCJpYXQiOjE2NTA2NDIzNDR9.OEpIrY_RfkWpS_s_0dG_yWGuoxXi_EpDW9kALSGvEXo",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:5000/api/favs/6262cc26349ccd8abca382ea",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"favs",
+								"6262cc26349ccd8abca382ea"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "386"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"182-X7XY8KmcH+3oaNE8XkZSyNruLwI\""
+						},
+						{
+							"key": "Date",
+							"value": "Fri, 22 Apr 2022 15:57:53 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"_id\": \"6262cc26349ccd8abca382ea\",\n    \"name\": \"Movies\",\n    \"ownerID\": \"6262c540349ccd8abca382e6\",\n    \"favs\": [\n        {\n            \"title\": \"Independence day\",\n            \"description\": \"best sci-fy movie from the 90's\",\n            \"link\": \"https://www.imdb.com/title/tt0116629/?ref_=nv_sr_srsg_0\"\n        },\n        {\n            \"title\": \"Inception\",\n            \"description\": \"My favorite Leonardo Di Caprio movie\",\n            \"link\": \"https://www.imdb.com/title/tt1375666/?ref_=nv_sr_srsg_0\"\n        }\n    ],\n    \"__v\": 0\n}"
+				}
+			]
+		},
+		{
+			"name": "Add items to fav list",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6Im1yZmY4OEBnbWFpbC5jb20iLCJpYXQiOjE2NTA2NDIzNDR9.OEpIrY_RfkWpS_s_0dG_yWGuoxXi_EpDW9kALSGvEXo",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "[\r\n    {\r\n        \"title\": \"Kung Fu Hustle\",\r\n        \"description\": \"Favorite Stephen Chow movie\",\r\n        \"link\": \"https://www.imdb.com/title/tt0373074/?ref_=nv_sr_srsg_0\"\r\n    },\r\n    {\r\n        \"title\": \"Shaolin Soccer\",\r\n        \"description\": \"2nd favorite Stephen Chow movie\",\r\n        \"link\": \"https://www.imdb.com/title/tt0286112/?ref_=fn_al_tt_1\"\r\n    }\r\n]",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:5000/api/favs/62632d4e46a06f2da9bd83de",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"api",
+						"favs",
+						"62632d4e46a06f2da9bd83de"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Add items to fav list status 200",
+					"originalRequest": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6Im1yZmY4OEBnbWFpbC5jb20iLCJpYXQiOjE2NTA2NDIzNDR9.OEpIrY_RfkWpS_s_0dG_yWGuoxXi_EpDW9kALSGvEXo",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "[\r\n    {\r\n        \"title\": \"Kung Fu Hustle\",\r\n        \"description\": \"Favorite Stephen Chow movie\",\r\n        \"link\": \"https://www.imdb.com/title/tt0373074/?ref_=nv_sr_srsg_0\"\r\n    },\r\n    {\r\n        \"title\": \"Shaolin Soccer\",\r\n        \"description\": \"2nd favorite Stephen Chow movie\",\r\n        \"link\": \"https://www.imdb.com/title/tt0286112/?ref_=fn_al_tt_1\"\r\n    }\r\n]",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:5000/api/favs/6262cc26349ccd8abca382ea",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"favs",
+								"6262cc26349ccd8abca382ea"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "660"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"294-fzdDYXUbtn7WP4/ClQ8eV1I7QFA\""
+						},
+						{
+							"key": "Date",
+							"value": "Fri, 22 Apr 2022 16:09:47 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"_id\": \"6262cc26349ccd8abca382ea\",\n    \"name\": \"Movies\",\n    \"ownerID\": \"6262c540349ccd8abca382e6\",\n    \"favs\": [\n        {\n            \"title\": \"Independence day\",\n            \"description\": \"best sci-fy movie from the 90's\",\n            \"link\": \"https://www.imdb.com/title/tt0116629/?ref_=nv_sr_srsg_0\"\n        },\n        {\n            \"title\": \"Inception\",\n            \"description\": \"My favorite Leonardo Di Caprio movie\",\n            \"link\": \"https://www.imdb.com/title/tt1375666/?ref_=nv_sr_srsg_0\"\n        },\n        {\n            \"title\": \"Kung Fu Hustle\",\n            \"description\": \"Favorite Stephen Chow movie\",\n            \"link\": \"https://www.imdb.com/title/tt0373074/?ref_=nv_sr_srsg_0\"\n        },\n        {\n            \"title\": \"Shaolin Soccer\",\n            \"description\": \"2nd favorite Stephen Chow movie\",\n            \"link\": \"https://www.imdb.com/title/tt0286112/?ref_=fn_al_tt_1\"\n        }\n    ],\n    \"__v\": 1\n}"
+				}
+			]
+		},
+		{
+			"name": "Delete fav list",
+			"request": {
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6Im1yZmY4OEBnbWFpbC5jb20iLCJpYXQiOjE2NTA2NDIzNDR9.OEpIrY_RfkWpS_s_0dG_yWGuoxXi_EpDW9kALSGvEXo",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:5000/api/favs/62632d4e46a06f2da9bd83de",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"api",
+						"favs",
+						"62632d4e46a06f2da9bd83de"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Delete fav list status 200",
+					"originalRequest": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6Im1yZmY4OEBnbWFpbC5jb20iLCJpYXQiOjE2NTA2NDIzNDR9.OEpIrY_RfkWpS_s_0dG_yWGuoxXi_EpDW9kALSGvEXo",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:5000/api/favs/6262cd04349ccd8abca382ed",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"favs",
+								"6262cd04349ccd8abca382ed"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "38"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"26-fgR5yLHQ1Hpp6zDESHaY9wJreYE\""
+						},
+						{
+							"key": "Date",
+							"value": "Fri, 22 Apr 2022 16:12:10 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"acknowledged\": true,\n    \"deletedCount\": 1\n}"
+				}
+			]
+		}
+	]
+}
