@@ -31,6 +31,27 @@ const favListSchema = new Schema({
   favs: [favsSchema],
 });
 
-const favList = mongoose.model('FavLists', favListSchema, 'favLists');
+favListSchema.statics.addFavList = function (favList) {
+  return FavList.create(favList);
+};
 
-export default favList;
+favListSchema.statics.findAllFavLists = function (ownerId) {
+  return FavList.find({ ownerID: ownerId });
+};
+
+favListSchema.statics.findFavList = function (listId) {
+  return FavList.findById(listId);
+};
+
+favListSchema.statics.addItemsToFavList = function (listToUpdate, itemsToAdd) {
+  listToUpdate.favs = [...listToUpdate.favs, ...itemsToAdd];
+  return listToUpdate.save();
+};
+
+favListSchema.statics.removeFavList = function (listToDelete) {
+  return FavList.deleteOne(listToDelete);
+};
+
+const FavList = mongoose.model('FavLists', favListSchema, 'favLists');
+
+export default FavList;
