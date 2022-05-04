@@ -3,10 +3,8 @@ import errorMessageHandler from '../utils/errorMessageHandler.js';
 
 // create user
 export const createUser = async (req, res) => {
-  const { email, password } = req.body;
-
   try {
-    const newUser = await User.create({ email, password });
+    const newUser = await User.addUser(req.body);
     res.status(201).json(newUser);
   } catch (error) {
     const errors = errorMessageHandler(error);

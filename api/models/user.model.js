@@ -22,6 +22,10 @@ const usersSchema = new Schema({
   },
 });
 
+usersSchema.statics.addUser = function (user) {
+  return User.create(user);
+};
+
 usersSchema.statics.verifyUsersCredentials = async function (email, password) {
   const result = {};
   // find user
