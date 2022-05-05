@@ -26,7 +26,7 @@ npm install
 
 ## &nbsp;&nbsp;&nbsp; 3. Setup env variables
 
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Create two files at the root of the project: dev.env and test.env. Configure each env. file with the following info:
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Create two files at the root of the project: dev.env and test.env. Configure each env. file following the example of [example.env](example.env), which contains the following info:
 
 ```
 PORT = <port number>
