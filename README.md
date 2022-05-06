@@ -66,6 +66,12 @@ npm run test:watch
 
 ---
 
+# Deployment
+
+&nbsp;&nbsp;&nbsp; Deployment in Heroku can be viewed clicking [here](https://favlist-backend-assessment.herokuapp.com/)
+
+---
+
 # Questions:
 
 ## &nbsp;&nbsp;&nbsp; 1. Indicate which are the parts of the following url:
