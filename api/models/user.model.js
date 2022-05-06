@@ -1,5 +1,6 @@
 import mongoose from 'mongoose';
 import validator from 'validator';
+import jwt from 'jsonwebtoken';
 
 const { isEmail, isStrongPassword } = validator;
 
@@ -20,6 +21,29 @@ const usersSchema = new Schema({
     ],
   },
 });
+
+usersSchema.statics.addUser = function (user) {
+  return User.create(user);
+};
+
+usersSchema.statics.findUser = function (userId) {
+  return User.findById(userId);
+};
+
+usersSchema.statics.verifyUsersCredentials = async function (email, password) {
+  const result = {};
+  // find user
+  const users = await User.find({ email });
+  result.userFound = !!users[0];
+  // verify password
+  result.passwordMatch = users[0]?.password === password;
+
+  return result;
+};
+
+usersSchema.statics.jwt = function (email) {
+  return jwt.sign({ email }, process.env.SECRET_KEY);
+};
 
 const User = mongoose.model('Users', usersSchema, 'users');
 

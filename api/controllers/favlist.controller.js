@@ -6,10 +6,10 @@ export const createFavList = async (req, res) => {
   const { ownerID } = req.body;
 
   try {
-    const userFound = await User.findById(ownerID);
+    const userFound = await User.findUser(ownerID);
     if (!userFound)
       return res.status(400).json({ message: "List's owner not found" });
-    const newFavList = await FavList.create(req.body);
+    const newFavList = await FavList.addFavList(req.body);
     res.status(201).json(newFavList);
   } catch (error) {
     const errors = errorMessageHandler(error);
@@ -27,11 +27,11 @@ export const getAllFavLists = async (req, res) => {
   const { ownerID } = req.params;
 
   try {
-    const userFound = await User.findById(ownerID);
+    const userFound = await User.findUser(ownerID);
     if (!userFound)
       return res.status(400).json({ message: "List's owner not found" });
 
-    const favLists = await FavList.find({ ownerID: ownerID });
+    const favLists = await FavList.findAllFavLists(ownerID);
     if (favLists.length === 0) res.status(204).send();
     else res.status(200).json(favLists);
   } catch (error) {
@@ -44,7 +44,7 @@ export const getFavlist = async (req, res) => {
   const { id: listId } = req.params;
 
   try {
-    const foundList = await FavList.findById(listId);
+    const foundList = await FavList.findFavList(listId);
     if (!foundList) res.status(404).json({ message: 'List not found' });
     else res.status(200).json(foundList);
   } catch (error) {
@@ -58,10 +58,9 @@ export const updateFavsInList = async (req, res) => {
   const { id: listId } = req.params;
 
   try {
-    const foundList = await FavList.findById(listId);
+    const foundList = await FavList.findFavList(listId);
     if (!foundList) return res.status(404).json({ message: 'List not found' });
-    foundList.favs = [...foundList.favs, ...favsToAdd];
-    const listSaved = await foundList.save();
+    const listSaved = await FavList.addItemsToFavList(foundList, favsToAdd);
     if (listSaved) res.status(200).json(listSaved);
     else res.status(400).json({ message: 'Error saving items to lists' });
   } catch (error) {
@@ -74,10 +73,10 @@ export const deleteFavList = async (req, res) => {
   const { id: listId } = req.params;
 
   try {
-    const listToDelete = await FavList.findById(listId);
+    const listToDelete = await FavList.findFavList(listId);
     if (!listToDelete)
       return res.status(404).json({ message: 'List not found' });
-    const deletedList = await FavList.deleteOne(listToDelete);
+    const deletedList = await FavList.removeFavList(listToDelete);
     res.status(200).json(deletedList);
   } catch (error) {
     res.status(500).json({ error });

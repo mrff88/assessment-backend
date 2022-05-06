@@ -26,7 +26,7 @@ npm install
 
 ## &nbsp;&nbsp;&nbsp; 3. Setup env variables
 
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Create two files at the root of the project: dev.env and test.env. Configure each env. file with the following info:
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Create two files at the root of the project: dev.env and test.env. Configure each env. file following the example of [example.env](example.env), which contains the following info:
 
 ```
 PORT = <port number>
@@ -63,6 +63,12 @@ npm run test:watch
 # Postman endpoints' tests
 
 &nbsp;&nbsp;&nbsp; Import file [backend-assessment.postman_collection](backend-assessment.postman_collection.json) into postman to review all the endpoints' tests done in postman
+
+---
+
+# Deployment
+
+&nbsp;&nbsp;&nbsp; Deployment in Heroku can be viewed clicking [here](https://favlist-backend-assessment.herokuapp.com/)
 
 ---
 

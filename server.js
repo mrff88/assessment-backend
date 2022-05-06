@@ -35,6 +35,9 @@ const app = express();
 app.use(express.json());
 
 // routes
+app.get('/', (request, response) => {
+  response.send('API FAVS - ASSESSMENT BACKEND');
+});
 app.use('/api', userRouter);
 app.use('/api', favListRouter);
 app.use('/auth', authRouter);
